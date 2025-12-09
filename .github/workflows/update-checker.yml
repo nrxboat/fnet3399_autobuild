@@ -13,8 +13,8 @@
 name: Update Checker
 
 env:
-  REPO_URL: https://github.com/coolsnowwolf/lede
-  REPO_BRANCH: master
+  REPO_URL: https://github.com/nrxboat/immortalwrt-fnet3399
+  REPO_BRANCH: openwrt-24.10
 
 on:
   workflow_dispatch:
