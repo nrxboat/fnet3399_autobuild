@@ -14,8 +14,13 @@
 #sed -i 's/^#\(.*helloworld\)/\1/' feeds.conf.default
 
 # Add a feed source
+./scripts/feeds update -a
+./scripts/feeds install -a
 echo 'src-git helloworld https://github.com/fw876/helloworld' >> feeds.conf.default
 echo 'src-git qmodem https://github.com/FUjr/QModem.git;main' >> feeds.conf.default
 echo 'src-git kenzo https://github.com/kenzok8/openwrt-packages' >> feeds.conf.default
-echo "src-git fancontrol https://github.com/rockjake/luci-app-fancontrol.git" >> "feeds.conf"
+echo "src-git fancontrol https://github.com/rockjake/luci-app-fancontrol.git" >> feeds.conf.default
+sed -i '/\/etc\/init\.d\/tailscale/d;/\/etc\/config\/tailscale/d;' feeds/packages/net/tailscale/Makefile
+git clone https://github.com/asvow/luci-app-tailscale package/luci-app-tailscale
+git clone https://github.com/eamonxg/luci-theme-aurora package/luci-theme-aurora
 #echo 'src-git passwall https://github.com/xiaorouji/openwrt-passwall' >>feeds.conf.default
