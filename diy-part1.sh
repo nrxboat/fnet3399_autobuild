@@ -18,6 +18,7 @@
 ./scripts/feeds install -a
 echo 'src-git qmodem https://github.com/FUjr/QModem.git;main' >> feeds.conf.default
 echo "src-git fancontrol https://github.com/rockjake/luci-app-fancontrol.git" >> feeds.conf.default
+echo 'src-git istore https://github.com/linkease/istore;main' >> feeds.conf.default
 sed -i '/\/etc\/init\.d\/tailscale/d;/\/etc\/config\/tailscale/d;' feeds/packages/net/tailscale/Makefile
 git clone https://github.com/asvow/luci-app-tailscale package/luci-app-tailscale
 git clone https://github.com/eamonxg/luci-theme-aurora package/luci-theme-aurora
